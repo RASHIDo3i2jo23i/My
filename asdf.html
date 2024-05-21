@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спортивный портал Казахстана</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #d60000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #9c0000;
+        }
+
+        .search-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 5px;
+            font-size: 17px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-container button {
+            padding: 5px;
+            font-size: 17px;
+            border: none;
+            background: #9c0000;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background: #b30000;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .main-content {
+            flex: 3;
+            margin: 20px;
+        }
+
+        .sidebar {
+            flex: 1;
+            margin: 20px;
+        }
+
+        .section {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #d60000;
+            font-size: 24px;
+        }
+
+        .section p {
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #d60000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .subscribe-form input[type="email"] {
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .subscribe-form button {
+            padding: 10px;
+            background-color: #fff;
+            color: #d60000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .subscribe-form button:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        function searchContent() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                let text = section.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Спортивный портал Казахстана</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#news">Новости</a></li>
+                <li><a href="#schedule">Расписание</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Поиск...">
+            <button onclick="searchContent()">Поиск</button>
+        </div>
+    </header>
+    
+    <div class="content">
+        <div class="main-content">
+            <div id="home" class="section">
+                <h2>Главная</h2>
+                <p>Добро пожаловать на спортивный портал Казахстана! Здесь вы найдете самые свежие новости и актуальное расписание спортивных мероприятий по всему Казахстану. Мы следим за всеми спортивными событиями в стране и предоставляем вам возможность быть в курсе всех событий. Независимо от того, интересуетесь ли вы футболом, хоккеем, боксом или другими видами спорта, у нас есть информация для вас. Присоединяйтесь к нам, чтобы быть в курсе всех новостей и событий в мире спорта Казахстана!</p>
+            </div>
+
+            <div id="news" class="section">
+                <h2>Новости</h2>
+                <div class="gallery">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8UOzTM9zkJxtdYKehsHHn9B2HjOaWA-itMWocWV429w&s" alt="News Image 1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7y4NFL21frG8MzqREbnUDwMr-YvKTSjeH8YqQKWZe1Q&s" alt="News Image 2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnWO8T6k5Q5qxwHqwmBRr_mxOYcQ4ZOtvszn0zNYgmrQ&s" alt="News Image 3">
+                </div>
+                <p>Здесь будут самые актуальные новости из мира спорта в Казахстане.</p>
+            </div>
+
+            <div id="schedule" class="section">
+                <h2>Расписание</h2>
+                <h3>Футбол</h3>
+                    <p>10 мая 2024 года: Астана FC vs. Шахтер Караганда</p>
+                    <p>15 мая 2024 года: Кубок Казахстана - Финал</p>
+                <h3>Хоккей</h3>
+                    <p>12 мая 2024 года: Шахтёр Караганда vs. Астана Capitals</p>
+                    <p>17 мая 2024 года: Кубок Казахстана по хоккею - Финал</p>
+                <h3>Бокс</h3>
+                    <p>20 мая 2024 года: Национальный турнир по боксу в Алматы</p>
+                <h3>Теннис</h3>
+                    <p>25 мая 2024 года: Открытый чемпионат Казахстана в Нур-Султане</p>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="section">
+                <h2>Подписка на новости</h2>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Ваш email">
+                    <button type="submit">Подписаться</button>
+                </form>
+            </div>
+            <div class="section">
+                <h2>Социальные сети</h2>
+                <p>Следите за нами в социальных сетях:</p>
+                <ul>
+                    <li><a href="https://www.instagram.com">ВКонтакте</a></li>
+                    <li><a href="https://www.instagram.com">Facebook</a></li>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Спортивный портал Казахстана. Все права защищены.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
